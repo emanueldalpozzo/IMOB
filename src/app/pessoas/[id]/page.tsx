@@ -22,9 +22,7 @@ export default async function PessoaDetalhesPage({
           <Link href="/">
             <Button variant="secondary">Voltar</Button>
           </Link>
-          <Link href={`/pessoas/${id}/fichas/nova`}>
-            <Button variant="primary">+ Nova Ficha</Button>
-          </Link>
+        
         </PageHeader>
 
         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
