@@ -64,18 +64,17 @@ src/
 flowchart TD
     A[Usuário acessa a aplicação] --> B[Listagem de Pessoas]
 
-    B --> C[Cadastrar Pessoa]
-    B --> F[Visualizar Fichas]
+    B --> C[Cadastrar Nova Pessoa]
+    B --> D[Detalhes da Pessoa / Histórico de Fichas]
 
-    C --> G[Preenche formulário]
-    G --> H[Envia para API]
-    H --> I[Atualiza banco de dados]
-    
-    
+    C --> E[Preenche formulário]
+    E --> F[Envia POST para API]
+    F -->|Redireciona| B
 
-    F --> L[Lista fichas]
-    L --> M[Editar ficha]
-    M --> H
+    D --> J[Editar Ficha]
+    J --> K[Altera informações]
+    K --> L[Envia PUT para API]
+    L -->|Redireciona| D
 ```
 
 ## 5. Telas
