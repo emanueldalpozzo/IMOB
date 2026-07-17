@@ -195,3 +195,74 @@ src/
 
 ```
 **Explicação:** está página está abrigando basicamente somente o layout, deixando o trabalho para os componentes. No `<PessoaForm/>` utilizei o `React Hook Form` para gerenciar os estados dos inputs e o `Zod` para validações de regras antes de enviar dados para a API
+
+## 🚀 Como executar o projeto
+
+### Pré-requisitos
+
+Antes de iniciar, certifique-se de ter instalado:
+
+- Node.js (18 ou superior)
+- npm
+- Git
+
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/emanueldalpozzo/IMOB.git
+```
+
+### 2. Acessar a pasta do projeto
+
+```bash
+cd IMOB
+```
+
+### 3. Instalar as dependências
+
+```bash
+npm install
+```
+
+
+### 4. Executar a aplicação em modo de desenvolvimento
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 📦 Executando em produção
+
+(Deve-se parar primeiramente o servidor dev, caso ele tenha sido iniciado primeiro)
+
+### Gerar a build
+
+```bash
+npm run build
+```
+
+### Iniciar o servidor
+
+```bash
+npm run start
+```
+
+---
+
+## 📜 Scripts disponíveis
+
+| Comando | Descrição |
+|----------|-----------|
+| `npm run dev` | Executa a aplicação em modo de desenvolvimento. |
+| `npm run build` | Gera a build otimizada para produção. |
+| `npm run start` | Executa a aplicação utilizando a build de produção. |
+| `npm run lint` | Executa o ESLint para verificar a qualidade do código. |
