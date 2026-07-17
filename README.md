@@ -105,7 +105,7 @@ src/
 │   └── pessoas.ts
 ```
 
-**Explicação:** utilizei um server component assíncrono para ser renderizado somente após a função `listarPessoas()` terminar. Essa função esta presente no arquivo `pessoas.ts`e é responsável por consumir a API e retornar os dados responsáveis pela listagem. Como é um server component, o usuário já recebe a página pronta. Deixei o revalidate como 0 para a página não ser armazenada em cache em nenhum momento, isso para garantir que o usuário sempre veja os dados atualizados na tela e nenhum dado defasado. Utilizei o tratameto de erros try/catch caso a API não responda. Utilizei os componentes para enxugar a tela principal. Praticamente toda a tela deu pra fazer com componentes.
+**Explicação:** utilizei um server component assíncrono para ser renderizado somente após a função `listarPessoas()` terminar. Essa função esta presente no arquivo `pessoas.ts`e é responsável por consumir a API e retornar os dados responsáveis pela listagem. Como é um server component, o usuário já recebe a página pronta. Deixei o revalidate como 0 para a página não ser armazenada em cache em nenhum momento, isso para garantir que o usuário sempre veja os dados atualizados na tela e nenhum dado defasado. Utilizei o tratameto de erros try/catch isolado da rendenrização JSX para respeitar as Error Boundaries do React caso a API não responda. Utilizei os componentes para enxugar a tela principal. Praticamente toda a tela deu pra fazer com componentes.
 
 ### Tela de detalhes da pessoas
 
@@ -132,7 +132,7 @@ src/
 │   └── pessoas.ts
 
 ```
-**Explicação:** utilizando rotas dinâmicas para listar o histórico de fichas de determinado id. O Next extrai o valor o valor da URL e disponibiliza em params. O params é uma promise por isso é feito o `await params` antes de ler o ID. O Next é impedido de guardar a página em cache novamente. Usei renderizações condicionais para mostrar somente os dados que estão disponíveis na API.
+**Explicação:** utilizando rotas dinâmicas para listar o histórico de fichas de determinado id. O Next extrai o valor da URL e disponibiliza em params. O params é uma promise por isso é feito o `await params` antes de ler o ID. O Next é impedido de guardar a página em cache novamente. Usei renderizações condicionais para mostrar somente os dados que estão disponíveis na API.
 
 ### Tela de editar ficha
 
@@ -194,4 +194,4 @@ src/
 │       ├── Button.tsx
 
 ```
-**Explicação:** está página está abrigando basicamente somente o layout, deixando o trabalho para os componentes. No `<PessoaForm/>` utilizei o `Reac Hook Form` para gerenciar os estados dos inputs e o `Zod` para validações de regras antes de enviar dados para a API
+**Explicação:** está página está abrigando basicamente somente o layout, deixando o trabalho para os componentes. No `<PessoaForm/>` utilizei o `React Hook Form` para gerenciar os estados dos inputs e o `Zod` para validações de regras antes de enviar dados para a API

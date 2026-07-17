@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
@@ -50,7 +50,7 @@ export default function PessoaForm() {
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     formState: { errors, isSubmitting },
   } = useForm<PessoaFormData>({
     resolver: zodResolver(criarPessoaSchema),
@@ -66,7 +66,10 @@ export default function PessoaForm() {
     },
   });
 
-  const tipoPessoa = watch("tipo");
+  const tipoPessoa = useWatch({
+    control,
+    name: "tipo",
+  });
 
   const onSubmit = async (data: PessoaFormData) => {
     setSubmitError(null);
@@ -100,8 +103,8 @@ export default function PessoaForm() {
             {...register("tipo")}
             className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           >
-            <option className= 'text-black' value="Fisica">Pessoa Física</option>
-            <option className= 'text-black' value="Juridica">Pessoa Jurídica</option>
+            <option className="text-black" value="Fisica">Pessoa Física</option>
+            <option className="text-black" value="Juridica">Pessoa Jurídica</option>
           </select>
         </div>
 
