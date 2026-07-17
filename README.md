@@ -7,7 +7,7 @@ Desenvolvimento de uma aplicação front-end com next para gerenciamento de pess
 - **[x] NextJs:** utilizado na estrutura da aplicação e no roteamento. Também foi utilizado para busca de dados no servidor com os servers components e o axios
 - **[x] ReactJs:** para a construção da interface e componentes.
 - **[x] Typescript:** utilizado na tipagem do swagger da API principalmente.
-- **[x] Axios:** utilizei o cliente http axios principalmente para centralizar a URL da api em um só liugar, invés de colocar em todas as requisições. Fazer o parse para JSON automaticamente.
+- **[x] Axios:** utilizei o cliente http axios principalmente para centralizar a URL da api em um só lugar, invés de colocar em todas as requisições. Fazer o parse para JSON automaticamente.
 - **[x] React Hook Form:** Melhorar a performance da aplicação exigindo menos re-renderizações a cada valor digitado no input dos forms. Deixar o código mais limpo, diminuindo o uso de useState para cada input. Validação dos dados mais fácil com a biblioteca Zod.
 - **[x] Zod:** utilizado para validar campos do formulário sem preciasar ficar utilizando vários if's. Centralizar as mensagens de erro e mostrar as mensagens ao usuário dizendo o que ele errou e aonde. Não permitir requisições ao servidor caso os dados estejam incorretos.
 - **[x] Tailwind:** utilizado na estilização.
